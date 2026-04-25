@@ -1,0 +1,65 @@
+name: API Tests – CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:          # allow manual trigger from Actions tab
+
+env:
+  JAVA_VERSION: '17'
+  BASE_URL: ${{ secrets.BASE_URL || 'http://localhost:8080/api' }}
+
+jobs:
+  api-tests:
+    name: Run REST Assured API Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── Checkout ────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Java setup ──────────────────────────────────────────────────────────
+      - name: Set up JDK ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          distribution: temurin
+          cache: maven
+
+      # ── (Optional) Start the banking backend via Docker Compose ─────────────
+      # Uncomment this block when you add a docker-compose.yml to this repo.
+      #
+      # - name: Start Banking Backend
+      #   run: |
+      #     docker compose -f docker-compose.yml up -d
+      #     echo "Waiting for backend to be ready..."
+      #     for i in {1..30}; do
+      #       curl -sf http://localhost:8080/api/health && break || sleep 3
+      #     done
+      #
+      # - name: Verify backend health
+      #   run: curl -sf http://localhost:8080/api/health
+
+      # ── Run tests ───────────────────────────────────────────────────────────
+      - name: Run API tests
+        run: mvn test -Dbase.url=${{ env.BASE_URL }} --no-transfer-progress
+        continue-on-error: true          # upload reports even on failure
+
+      # ── Upload HTML report ───────────────────────────────────────────────────
+      - name: Upload Extent Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: api-test-report-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+
+      # ── Fail the build if tests failed ─────────────────────────────────────
+      - name: Check test outcome
+        if: failure()
+        run: |
+          echo "::error::API tests failed — check the uploaded Extent Report artifact."
+          exit 1

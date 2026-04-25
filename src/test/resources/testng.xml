@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Digital Banking API Test Suite" verbose="1" thread-count="2" parallel="classes">
+
+    <listeners>
+        <listener class-name="com.banking.utils.TestListener"/>
+    </listeners>
+
+    <test name="Auth Tests" preserve-order="true">
+        <classes>
+            <class name="com.banking.tests.auth.AuthTests"/>
+        </classes>
+    </test>
+
+    <test name="Account Tests" preserve-order="true">
+        <classes>
+            <class name="com.banking.tests.account.AccountTests"/>
+        </classes>
+    </test>
+
+    <test name="Transaction Tests" preserve-order="true">
+        <classes>
+            <class name="com.banking.tests.transaction.TransactionTests"/>
+        </classes>
+    </test>
+
+</suite>

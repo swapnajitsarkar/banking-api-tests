@@ -1,0 +1,20 @@
+# Maven
+target/
+*.class
+
+# Reports (generated at runtime – committed skeleton only)
+reports/*.html
+reports/*.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.DS_Store
+
+# Env / secrets
+.env
+*.properties.local
+
+# OS
+Thumbs.db
