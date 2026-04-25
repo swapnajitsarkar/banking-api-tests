@@ -1,12 +1,12 @@
 # 🏦 Digital Banking System — REST Assured API Test Suite
 
-[![API Tests – CI](https://github.com/YOUR_USERNAME/banking-api-tests/actions/workflows/api-tests.yml/badge.svg)](https://github.com/YOUR_USERNAME/banking-api-tests/actions/workflows/api-tests.yml)
+[![API Tests – CI](https://github.com/swapnajitsarkar/banking-api-tests/actions/workflows/api-tests.yml/badge.svg)](https://github.com/swapnajitsarkar/banking-api-tests/actions/workflows/api-tests.yml)
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=openjdk)
 ![RestAssured](https://img.shields.io/badge/Rest%20Assured-5.4.0-green)
 ![TestNG](https://img.shields.io/badge/TestNG-7.9.0-orange)
 ![Build](https://img.shields.io/badge/build-Maven-red?logo=apachemaven)
 
-A production-grade **API test automation framework** built with **Rest Assured 5 + TestNG**, targeting the [Digital Banking System](https://github.com/YOUR_USERNAME/digital-banking-system) Spring Boot backend.
+A production-grade **API test automation framework** built with **Rest Assured 5 + TestNG**, targeting the [Digital Banking System](https://github.com/swapnajitsarkar/Banking-System) Spring Boot backend.
 
 ---
 
