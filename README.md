@@ -225,5 +225,5 @@ Digital Banking System — REST Assured Suite
 
 ## 🔗 Related Repositories
 
-- **Backend**: [digital-banking-system](https://github.com/YOUR_USERNAME/digital-banking-system) — Spring Boot 3 + JWT + Docker
-- **UI Tests**: [orangehrm-selenium-framework](https://github.com/YOUR_USERNAME/orangehrm-selenium-framework) — Selenium POM + TestNG
+- **Backend**: [digital-banking-system](https://github.com/swapnajitsarkar/digital-banking-system) — Spring Boot 3 + JWT + Docker
+- **UI Tests**: [orangehrm-selenium-framework](https://github.com/swapnajitsarkar/Selenium-TestNG-Framework) — Selenium POM + TestNG
