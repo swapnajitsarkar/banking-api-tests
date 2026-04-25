@@ -227,11 +227,3 @@ Digital Banking System — REST Assured Suite
 
 - **Backend**: [digital-banking-system](https://github.com/YOUR_USERNAME/digital-banking-system) — Spring Boot 3 + JWT + Docker
 - **UI Tests**: [orangehrm-selenium-framework](https://github.com/YOUR_USERNAME/orangehrm-selenium-framework) — Selenium POM + TestNG
-
----
-
-## 👤 Author
-
-**Swapnajit**  
-B.Tech CSE — KIIT University  
-[LinkedIn](https://linkedin.com/in/YOUR_HANDLE) • [GitHub](https://github.com/YOUR_USERNAME)
